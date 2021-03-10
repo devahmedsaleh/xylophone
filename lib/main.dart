@@ -13,20 +13,26 @@ class Xylophone extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: <Widget>[
-              FlatButton(
-                onPressed: () {},
-                child: Container(),
-                color: Colors.red,
+              Expanded(
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(),
+                  color: Colors.red,
+                ),
               ),
-              FlatButton(
-                onPressed: () {},
-                child: Container(),
-                color: Colors.orange,
+              Expanded(
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(),
+                  color: Colors.orange,
+                ),
               ),
-              FlatButton(
-                onPressed: () {},
-                child: Container(),
-                color: Colors.yellow,
+              Expanded(
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(),
+                  color: Colors.yellow,
+                ),
               )
             ],
           ),
