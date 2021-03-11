@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() => runApp(XylophoneApp());
 
@@ -11,13 +12,13 @@ class XylophoneApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: <Widget>[
-              buildKey(color: Colors.red),
-              buildKey(color: Colors.orange),
-              buildKey(color: Colors.yellow),
-              buildKey(color: Colors.green),
-              buildKey(color: Colors.teal),
-              buildKey(color: Colors.blue),
-              buildKey(color: Colors.purple),
+              buildKey(number: 1, color: Colors.red),
+              buildKey(number: 2, color: Colors.orange),
+              buildKey(number: 3, color: Colors.yellow),
+              buildKey(number: 4, color: Colors.green),
+              buildKey(number: 5, color: Colors.teal),
+              buildKey(number: 6, color: Colors.blue),
+              buildKey(number: 7, color: Colors.purple),
             ],
           ),
         ),
@@ -26,12 +27,15 @@ class XylophoneApp extends StatelessWidget {
   }
 }
 
-Expanded buildKey({Color color}) {
+Expanded buildKey({int number, Color color}) {
   return Expanded(
     child: FlatButton(
-      onPressed: () {},
+      onPressed: () => playAudio(number),
       child: Container(),
       color: color,
     ),
   );
 }
+
+void playAudio(int number) =>
+    AudioCache(prefix: 'audios/').play('note$number.wav');
